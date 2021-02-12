@@ -31,6 +31,5 @@ describe('Group records by customer', () => {
                 transactionAmt: 60
              },
             ]
-            console.log(`OUTPUT FROM REWARDS PROGRAM GROUPING ${JSON.stringify(groupRecordsByCustomerAndMonth(inputTransactions))}`);
     })
 })
