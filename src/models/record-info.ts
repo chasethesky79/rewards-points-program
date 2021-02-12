@@ -1,7 +1,7 @@
 import { Month } from "./month";
 
 export interface TransactionInfo {
-    transcationAmt: number;
+    transactionAmt: number;
     transactionMonth: Month;
 }
 
