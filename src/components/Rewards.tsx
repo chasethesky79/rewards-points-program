@@ -3,15 +3,14 @@ import { ICustomerPointsSummary as IRewardsPointsSummary, IRewardsPointsProps } 
 import { buildRewardsProgramResult } from "../util/rewards-calculator";
 import { withDataFetching } from "./withDataFetching";
 import { Alert } from '../styled-components/styled-components';
+import { CustomerPointsSummary } from "./CustomerPointsSummary";
 
 const Rewards: React.FC<IRewardsPointsProps> = ({ data, loading, error }: IRewardsPointsProps) => {
     const customerPointsSummary: IRewardsPointsSummary = buildRewardsProgramResult(data);
     return (
       <div>
            {( loading || error ) && <Alert>{loading ? 'Loading...' : error}</Alert>}
-          { customerPointsSummary && Object.entries(customerPointsSummary).map(([key, value]) => {
-              return <span>{key}, </span>
-          })}
+          { customerPointsSummary && <CustomerPointsSummary {...{ customerPointsSummary }}/>}
       </div>
     )
 }

@@ -35,3 +35,7 @@ export interface IRewardsPointsProps {
 export interface IDataSourceProps {
     dataSource: string;
 }
+
+export interface ICustomerPointsSummaryWrapper {
+    customerPointsSummary: ICustomerPointsSummary
+}
