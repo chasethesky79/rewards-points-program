@@ -1,7 +1,7 @@
-import { CustomerPointsSummary, CustomerTransactionMap, PointsTotalPerMonth, TransactionInfo, TransactionRecord } from "../models/record-info";
+import { ICustomerPointsSummary, ICustomerTransactionMap, IPointsTotalPerMonth, ITransactionInfo, ITransactionRecord } from "../models/rewards-models";
 
-const groupRecordsByCustomerAndMonth = (transactionRecords: TransactionRecord[]): CustomerTransactionMap => {
-    return transactionRecords.reduce((acc: CustomerTransactionMap, element: TransactionRecord) => {
+const groupRecordsByCustomerAndMonth = (transactionRecords: ITransactionRecord[]): ICustomerTransactionMap => {
+    return transactionRecords.reduce((acc: ICustomerTransactionMap, element: ITransactionRecord) => {
         const { customerName,  transactionMonth, transactionAmt } = element;
         const transactionInfoForCustomer = { transactionMonth, transactionAmt };
         acc[customerName] = !acc[customerName] ? [transactionInfoForCustomer] : [...acc[customerName], transactionInfoForCustomer]
@@ -12,8 +12,8 @@ const groupRecordsByCustomerAndMonth = (transactionRecords: TransactionRecord[])
 const calculatePointsFromTransactionAmount = (transactionAmount: number) => transactionAmount <= 50 ? 0 : transactionAmount > 50 && transactionAmount <= 100 ? transactionAmount - 50 :
 transactionAmount > 100 ? 2 * (transactionAmount - 100) + 50 : -1;
 
-const calculatePointsPerMonth = (transactions: TransactionInfo[]): PointsTotalPerMonth => {
-   const pointsTotalPerMonth = transactions.reduce((acc: PointsTotalPerMonth, element: TransactionInfo) => {
+const calculatePointsPerMonth = (transactions: ITransactionInfo[]): IPointsTotalPerMonth => {
+   const pointsTotalPerMonth = transactions.reduce((acc: IPointsTotalPerMonth, element: ITransactionInfo) => {
       const { transactionAmt, transactionMonth } = element;
       const pointsForTransactionAmt = calculatePointsFromTransactionAmount(transactionAmt);
       acc[transactionMonth] = !acc[transactionMonth] ? pointsForTransactionAmt : acc[transactionMonth] + pointsForTransactionAmt;
@@ -22,8 +22,8 @@ const calculatePointsPerMonth = (transactions: TransactionInfo[]): PointsTotalPe
    return pointsTotalPerMonth;
 }
 
-const buildCustomerPointsSummary = (customerTransactionMap: CustomerTransactionMap): CustomerPointsSummary => {
-     const customerPointsSummary: CustomerPointsSummary = Object.entries(customerTransactionMap).reduce((acc: CustomerPointsSummary, entry )=> {
+const buildCustomerPointsSummary = (customerTransactionMap: ICustomerTransactionMap): ICustomerPointsSummary => {
+     const customerPointsSummary: ICustomerPointsSummary = Object.entries(customerTransactionMap).reduce((acc: ICustomerPointsSummary, entry )=> {
         const [key, value] = entry;
         const pointsPerMonth = calculatePointsPerMonth(value);
         const totalPoints: number = Object.values(pointsPerMonth).reduce((acc: number, element: number) => acc + element);
@@ -33,4 +33,4 @@ const buildCustomerPointsSummary = (customerTransactionMap: CustomerTransactionM
       return customerPointsSummary;
 }
 
-export const buildRewardsProgramResult = (transactions: TransactionRecord[]) => buildCustomerPointsSummary(groupRecordsByCustomerAndMonth(transactions));
+export const buildRewardsProgramResult = (transactions: ITransactionRecord[]) => buildCustomerPointsSummary(groupRecordsByCustomerAndMonth(transactions));

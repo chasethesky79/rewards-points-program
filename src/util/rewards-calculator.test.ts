@@ -1,4 +1,4 @@
-import { CustomerPointsSummary, TransactionRecord } from '../models/record-info';
+import { ICustomerPointsSummary, ITransactionRecord } from '../models/rewards-models';
 import { Month } from '../models/month';
 import { buildRewardsProgramResult } from './rewards-calculator';
 
@@ -8,7 +8,7 @@ describe('Compute rewards points for customer', () => {
          const secondCustomer = 'Brian Murphy';
          const pointsPerMonth = 'pointsPerMonth';
          const totalPoints = 'totalPoints';
-         const inputTransactions: TransactionRecord[] = [
+         const inputTransactions: ITransactionRecord[] = [
             {
                customerName: firstCustomer,
                transactionMonth: Month.JANUARY,
@@ -35,7 +35,7 @@ describe('Compute rewards points for customer', () => {
                 transactionAmt: 60
              },
             ]
-         const result: CustomerPointsSummary = buildRewardsProgramResult(inputTransactions);
+         const result: ICustomerPointsSummary = buildRewardsProgramResult(inputTransactions);
          const pointsSummaryForFirstCustomer = result[firstCustomer];
          const pointsSummaryForSecondCustomer = result[secondCustomer];
          const monthlyPointsSummaryForFirstCustomer = pointsSummaryForFirstCustomer[pointsPerMonth];
