@@ -1,12 +1,18 @@
-import { ICustomerPointsSummary, IRewardsPointsProps } from "../models/rewards-models";
+import React from "react";
+import { ICustomerPointsSummary as IRewardsPointsSummary, IRewardsPointsProps } from "../models/rewards-models";
 import { buildRewardsProgramResult } from "../util/rewards-calculator";
 import { withDataFetching } from "./withDataFetching";
+import { Alert } from '../styled-components/styled-components';
 
 const Rewards: React.FC<IRewardsPointsProps> = ({ data, loading, error }: IRewardsPointsProps) => {
-    const customerPointsSummary: ICustomerPointsSummary = buildRewardsProgramResult(data);
-    console.log(`REWARDS INPUT FETCHED FROM FILE ${JSON.stringify(customerPointsSummary)}`);
+    const customerPointsSummary: IRewardsPointsSummary = buildRewardsProgramResult(data);
     return (
-      <div></div>
+      <div>
+           {( loading || error ) && <Alert>{loading ? 'Loading...' : error}</Alert>}
+          { customerPointsSummary && Object.entries(customerPointsSummary).map(([key, value]) => {
+              return <span>{key}, </span>
+          })}
+      </div>
     )
 }
 
