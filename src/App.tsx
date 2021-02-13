@@ -6,7 +6,7 @@ import { HeaderWrapper } from './styled-components/styled-components';
 function App() {
   return (
     <div className="App">
-      <HeaderWrapper>Project Management Board</HeaderWrapper>
+      <HeaderWrapper>Rewards Program</HeaderWrapper>
       <RewardsSummary dataSource='../../assets/data.json'/>
     </div>
   );
