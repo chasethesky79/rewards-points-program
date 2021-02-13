@@ -1,15 +1,8 @@
 import { Month } from "./month";
 
-type MonthDetails = {
-    transactionMonth: Month;
-}
-
-export interface TransactionInfo extends MonthDetails {
+export interface TransactionInfo {
     transactionAmt: number;
-}
-
-export interface PointsTotalPerMonth extends MonthDetails {
-    totalPoints: number;
+    transactionMonth: Month;
 }
 
 export interface TransactionRecord extends TransactionInfo {
@@ -18,4 +11,17 @@ export interface TransactionRecord extends TransactionInfo {
 
 export interface CustomerTransactionMap {
     [key: string]: TransactionInfo[]
+}
+
+export interface PointsTotalPerMonth {
+    [key: string]: number
+}
+
+export interface CustomerMonthlyPointsSummary {
+    pointsPerMonth: PointsTotalPerMonth,
+    totalPoints: number
+}
+
+export interface CustomerPointsSummary {
+    [key: string]: CustomerMonthlyPointsSummary
 }

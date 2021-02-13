@@ -1,6 +1,6 @@
 import { TransactionRecord } from '../models/record-info';
 import { Month } from '../models/month';
-import { groupRecordsByCustomerAndMonth } from './rewards-calculator';
+import { buildRewardsProgramResult } from './rewards-calculator';
 
 describe('Group records by customer', () => {
     it('should group transaction records by customer', () => {
@@ -23,7 +23,7 @@ describe('Group records by customer', () => {
              {
                 customerName: 'Brian Murphy',
                 transactionMonth: Month.JANUARY,
-                transactionAmt: 40
+                transactionAmt: 120
              },
              {
                 customerName: 'Brian Murphy',
@@ -31,5 +31,6 @@ describe('Group records by customer', () => {
                 transactionAmt: 60
              },
             ]
+            console.log(`FINAL RESULT ${JSON.stringify(buildRewardsProgramResult(inputTransactions))}`);
     })
 })
