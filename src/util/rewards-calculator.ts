@@ -9,7 +9,7 @@ const groupRecordsByCustomerAndMonth = (transactionRecords: TransactionRecord[])
     }, {})  
 } 
 
-const calculatePointsFromTransactionAmount = (transactionAmount: number) => transactionAmount <= 50 ? 0 : transactionAmount > 50 && transactionAmount <= 100 ? 50 :
+const calculatePointsFromTransactionAmount = (transactionAmount: number) => transactionAmount <= 50 ? 0 : transactionAmount > 50 && transactionAmount <= 100 ? transactionAmount - 50 :
 transactionAmount > 100 ? 2 * (transactionAmount - 100) + 50 : -1;
 
 const calculatePointsPerMonth = (transactions: TransactionInfo[]): PointsTotalPerMonth => {
