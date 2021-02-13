@@ -35,18 +35,18 @@ describe('Compute rewards points for customer', () => {
                 transactionAmt: 60
              },
             ]
-            const result: CustomerPointsSummary = buildRewardsProgramResult(inputTransactions);
-            const pointsSummaryForFirstCustomer = result[firstCustomer];
-            const pointsSummaryForSecondCustomer = result[secondCustomer];
-            const monthlyPointsSummaryForFirstCustomer = pointsSummaryForFirstCustomer[pointsPerMonth];
-            const monthlyPointsSummaryForSecondCustomer = pointsSummaryForSecondCustomer[pointsPerMonth];
-            const totalPointsForFirstCustomer = pointsSummaryForFirstCustomer[totalPoints];
-            const totalPointsForSecondCustomer = pointsSummaryForSecondCustomer[totalPoints];
-            expect(monthlyPointsSummaryForFirstCustomer[Month.JANUARY]).toBe(0);
-            expect(monthlyPointsSummaryForFirstCustomer[Month.FEBRUARY]).toBe(0);
-            expect(monthlyPointsSummaryForSecondCustomer[Month.JANUARY]).toBe(90);
-            expect(monthlyPointsSummaryForSecondCustomer[Month.FEBRUARY]).toBe(10);
-            expect(totalPointsForFirstCustomer).toBe(0);
-            expect(totalPointsForSecondCustomer).toBe(100);
+         const result: CustomerPointsSummary = buildRewardsProgramResult(inputTransactions);
+         const pointsSummaryForFirstCustomer = result[firstCustomer];
+         const pointsSummaryForSecondCustomer = result[secondCustomer];
+         const monthlyPointsSummaryForFirstCustomer = pointsSummaryForFirstCustomer[pointsPerMonth];
+         const monthlyPointsSummaryForSecondCustomer = pointsSummaryForSecondCustomer[pointsPerMonth];
+         const totalPointsForFirstCustomer = pointsSummaryForFirstCustomer[totalPoints];
+         const totalPointsForSecondCustomer = pointsSummaryForSecondCustomer[totalPoints];
+         expect(monthlyPointsSummaryForFirstCustomer[Month.JANUARY]).toBe(0);
+         expect(monthlyPointsSummaryForFirstCustomer[Month.FEBRUARY]).toBe(0);
+         expect(monthlyPointsSummaryForSecondCustomer[Month.JANUARY]).toBe(90);
+         expect(monthlyPointsSummaryForSecondCustomer[Month.FEBRUARY]).toBe(10);
+         expect(totalPointsForFirstCustomer).toBe(0);
+         expect(totalPointsForSecondCustomer).toBe(100);
     })
 })
