@@ -48,5 +48,10 @@
     "customerName": "Jessica Wagner",
     "transactionMonth": "MARCH",
     "transactionAmt": 140
+  },
+  {
+    "customerName": "Matthew Wade",
+    "transactionMonth": "MARCH",
+    "transactionAmt": 140
   }
 ]

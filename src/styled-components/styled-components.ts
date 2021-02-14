@@ -21,14 +21,19 @@ export const HeaderWrapper = styled.div`
     color: white;
 `;
 
-export const RewardsTableWrapper = styled.div`
+export const RewardsTableWrapper = styled.table`
   display: flex;
   justify-content: center;
   margin-top: 30px;
-  border-spacing: 10px;
-  border-collapse: separate;
 `
 
 export const RewardsTableHeaderWrapper = styled.th`
    text-align: center; 
+   border: 1px solid black;
+   margin-left: 30px;
+`
+
+export const RewardsTableColumnWrapper = styled.td`
+ padding: 10px;
+ border: 1px solid black;
 `
