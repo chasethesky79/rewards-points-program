@@ -20,3 +20,15 @@ export const HeaderWrapper = styled.div`
     font-size: calc(10px + 2vmin);
     color: white;
 `;
+
+export const RewardsTableWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  border-spacing: 10px;
+  border-collapse: separate;
+`
+
+export const RewardsTableHeaderWrapper = styled.th`
+   text-align: center; 
+`

@@ -36,6 +36,6 @@ export interface IDataSourceProps {
     dataSource: string;
 }
 
-export interface ICustomerPointsSummaryWrapper {
+export interface ICustomerPointsSummaryProps {
     customerPointsSummary: ICustomerPointsSummary
 }
