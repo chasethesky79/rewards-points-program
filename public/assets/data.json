@@ -1,57 +1,57 @@
 [
   {
     "customerName": "John Doe",
-    "transactionMonth": "JANUARY",
+    "transactionMonth": "January",
     "transactionAmt": 30
   },
   {
     "customerName": "John Doe",
-    "transactionMonth": "FEBRUARY",
+    "transactionMonth": "February",
     "transactionAmt": 70
   },
   {
     "customerName": "Brian Murphy",
-    "transactionMonth": "JANUARY",
+    "transactionMonth": "January",
     "transactionAmt": 120
   },
   {
     "customerName": "Brian Murphy",
-    "transactionMonth": "FEBRUARY",
+    "transactionMonth": "February",
     "transactionAmt": 80
   },
   {
     "customerName": "Brian Murphy",
-    "transactionMonth": "MARCH",
+    "transactionMonth": "March",
     "transactionAmt": 30
   },
   {
     "customerName": "Jessica Wagner",
-    "transactionMonth": "JANUARY",
+    "transactionMonth": "January",
     "transactionAmt": 130
   },
   {
     "customerName": "John Doe",
-    "transactionMonth": "JANUARY",
+    "transactionMonth": "January",
     "transactionAmt": 110
   },
   {
     "customerName": "John Doe",
-    "transactionMonth": "FEBRUARY",
+    "transactionMonth": "February",
     "transactionAmt": 220
   },
   {
     "customerName": "Jessica Wagner",
-    "transactionMonth": "MARCH",
+    "transactionMonth": "March",
     "transactionAmt": 110
   },
   {
     "customerName": "Jessica Wagner",
-    "transactionMonth": "MARCH",
+    "transactionMonth": "March",
     "transactionAmt": 140
   },
   {
     "customerName": "Matthew Wade",
-    "transactionMonth": "MARCH",
+    "transactionMonth": "March",
     "transactionAmt": 140
   }
 ]

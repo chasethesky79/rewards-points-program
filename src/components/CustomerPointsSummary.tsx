@@ -1,10 +1,10 @@
 import { ICustomerPointsSummaryProps } from "../models/rewards-models";
-import { RewardsTableWrapper, RewardsTableHeaderWrapper, RewardsTableColumnWrapper } from '../styled-components/styled-components';
+import { RewardsTableWrapper, RewardsTableColumnWrapper } from '../styled-components/styled-components';
 import '../components/Rewards.css'
 
 export const CustomerPointsSummary: React.FC<ICustomerPointsSummaryProps> = ({ customerPointsSummary }: ICustomerPointsSummaryProps) => {
     return (
-            <RewardsTableWrapper>
+        <RewardsTableWrapper>
             <tbody>
                 <tr>
                 <th colSpan={1} className='rewards-table-header'>Customer</th>
@@ -18,6 +18,6 @@ export const CustomerPointsSummary: React.FC<ICustomerPointsSummaryProps> = ({ c
                 </tr>
                 ))}
             </tbody>
-            </RewardsTableWrapper>
+        </RewardsTableWrapper>
     )
 }

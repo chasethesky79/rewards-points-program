@@ -30,7 +30,7 @@ const buildCustomerPointsSummary = (customerTransactionMap: ICustomerTransaction
         acc[key] = { pointsPerMonth, totalPoints };
         return acc;
       }, {});
-      return customerPointsSummary;
+     return customerPointsSummary;
 }
 
 export const buildRewardsProgramResult = (transactions: ITransactionRecord[]) => buildCustomerPointsSummary(groupRecordsByCustomerAndMonth(transactions));

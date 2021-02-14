@@ -1,13 +1,13 @@
-import React from 'react';
-import RewardsSummary from '../src/components/Rewards';
-import './App.css';
-import { HeaderWrapper } from './styled-components/styled-components';
+import React from "react";
+import RewardsSummary from "../src/components/Rewards";
+import "./App.css";
+import { HeaderWrapper } from "./styled-components/styled-components";
 
 function App() {
   return (
     <div className="App">
       <HeaderWrapper>Rewards Program</HeaderWrapper>
-      <RewardsSummary dataSource='../../assets/data.json'/>
+      <RewardsSummary dataSource="../../assets/data.json" />
     </div>
   );
 }
