@@ -1,6 +1,6 @@
 import { ICustomerPointsSummaryProps } from "../models/rewards-models";
 import { RewardsTableWrapper, RewardsTableColumnWrapper } from '../styled-components/styled-components';
-import '../components/Rewards.css'
+import '../styles/Rewards.css';
 
 export const CustomerPointsSummary: React.FC<ICustomerPointsSummaryProps> = ({ customerPointsSummary }: ICustomerPointsSummaryProps) => {
     return (
